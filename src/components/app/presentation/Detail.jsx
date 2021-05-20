@@ -2,7 +2,7 @@ import React from 'react';
 import { useDetail } from '../../../hooks/DetailCharacter';
 import CharacterDetail from './CharacterDetail';
 import PropTypes from 'prop-types';
-import Loading from '../../../Loading/Loading';
+import Loading from '../../../loading/Loading';
 
 const Detail = ({ id }) => {
   const { loading, detail } = useDetail(id);

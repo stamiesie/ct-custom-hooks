@@ -1,7 +1,7 @@
 import React from 'react';
 import CharacterList from './CharacterList';
 import { useAllCharacters } from '../../../hooks/Characters';
-import Loading from '../../../Loading/Loading';
+import Loading from '../../../loading/Loading';
 
 const Characters = () => {
   const { loading, characters } = useAllCharacters();
