@@ -24,7 +24,7 @@ describe('All Characters custom hook', () => {
       </MemoryRouter>
     );
 
-    screen.getByText('Loading...');
+    screen.getByAltText('Loading');
 
     const ul = await screen.findByRole('list', { name: 'characters' });
     expect(ul).not.toBeEmptyDOMElement();

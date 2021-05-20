@@ -1,11 +1,12 @@
 import React from 'react';
 import CharacterList from './CharacterList';
 import { useAllCharacters } from '../../../hooks/Characters';
+import Loading from '../../../Loading/Loading';
 
 const Characters = () => {
   const { loading, characters } = useAllCharacters();
 
-  if(loading) return <h1>Loading...</h1>;
+  if(loading) return <Loading />;
 
   return <CharacterList characters={characters}/>;
 

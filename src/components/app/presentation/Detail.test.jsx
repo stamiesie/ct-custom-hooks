@@ -27,7 +27,7 @@ describe('Detail custom hook', () => {
             </Route>
             </MemoryRouter>
         );
-        screen.getByText('Loading...');
+        screen.getByAltText('Loading');
 
         return waitFor(() => {
             screen.getByAltText('Nancy');
