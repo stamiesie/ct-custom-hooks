@@ -4,6 +4,7 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import mockCharacterData from '../../../../fixtures/AllCharacters.json';
 import Characters from './Characters';
+import { MemoryRouter } from 'react-router-dom';
 
 const server = setupServer(
   rest.get('https://hey-arnold-api.herokuapp.com/api/v1/characters', 
@@ -18,7 +19,9 @@ describe('All Characters custom hook', () => {
 
   it('renders a list of characters to the page', async () => {
     render(
-      <Characters />
+      <MemoryRouter>
+        <Characters />
+      </MemoryRouter>
     );
 
     screen.getByText('Loading...');

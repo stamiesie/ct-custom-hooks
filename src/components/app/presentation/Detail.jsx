@@ -1,9 +1,10 @@
 import React from 'react';
-import { fetchCharacterById } from '../../../services/ApiCall';
+import { useDetail } from '../../../hooks/DetailCharacter';
 import CharacterDetail from './CharacterDetail';
+import PropTypes from 'prop-types';
 
-const Detail = ({ match.params.id }) => {
-  const { loading, detail } = fetchCharacterById(match.params.id);
+const Detail = ({ id }) => {
+  const { loading, detail } = useDetail(id);
 
   if(loading) return <h1>Loading...</h1>;
 
@@ -13,8 +14,13 @@ const Detail = ({ match.params.id }) => {
         {...detail}/>
     </div>
   );
-
-
+  
 };
+
+Detail.propTypes = {
+  id: PropTypes.string.isRequired,
+};
+
+
 
 export default Detail;

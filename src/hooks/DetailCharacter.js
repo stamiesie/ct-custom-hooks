@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { fetchCharacterById } from '../services/ApiCall';
+import { useParams } from 'react-router-dom';
 
-export const Detail = ({ match }) => {
+export const useDetail = () => {
   const [loading, setLoading] = useState(true);
   const [detail, setDetail] = useState({});
+  const { id } = useParams();
 
-  console.log('id', match);
+  console.log('id', id);
   
   useEffect(() => {
-    fetchCharacterById(match.params.id)
+    fetchCharacterById(id)
       .then(detail => setDetail(detail))
       .finally(() => setLoading(false));
   }, []);
