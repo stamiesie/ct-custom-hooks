@@ -4,8 +4,8 @@ import CharacterDetail from './CharacterDetail';
 import PropTypes from 'prop-types';
 import Loading from '../../../loading/Loading';
 
-const Detail = ({ id }) => {
-  const { loading, detail } = useDetail(id);
+const Detail = () => {
+  const { loading, detail } = useDetail();
 
   if(loading) return <Loading />;
 
